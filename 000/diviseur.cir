@@ -1,0 +1,7 @@
+* Diviseur simple
+V1 1 0 DC 10
+R1 1 2 2k
+R2 2 0 3k
+
+.op
+.end
