@@ -1,0 +1,85 @@
+Les quatre éléments fondamentaux d’une simulation SPICE :
+
+Circuit → Netlist → Analyse → Résultats
+
+PySpice devra générer et envoyer à ngspice.
+
+La première ligne est le titre de la simulation.
+
+Voltage Divider - Week 1 Day 1
+
+La première ligne est le titre de la simulation, Elle n’est pas interprétée comme un composant.
+
+V1 vin 0 DC 10
+
+
+cela signifie : 
+
+V1    : nom de la source
+vin   : borne positive
+0     : borne négative connectée à la masse
+DC 10 : tension continue de 10 V
+
+
+Premiere resistance :
+
+R1 vin vout 1k
+
+R1   : nom de la résistance
+vin  : premier nœud
+vout : deuxième nœud
+1k   : résistance de 1 kΩ
+
+
+.op signifie Operating Point Analysis.
+
+Ngspice calcule les valeurs continues du circuit :
+
+- tensions des nœuds ;
+- courants dans les sources ;
+- courants de polarisation ;
+- états de fonctionnement des composants.
+
+.print op v(vin) v(vout)
+
+
+Cette ligne demande à ngspice d’afficher :
+
+la tension du nœud vin ;
+la tension du nœud vout.
+
+
+.end
+
+
+Cette instruction marque la fin du fichier SPICE.
+
+L’option -b signifie batch mode : ngspice exécute le fichier sans ouvrir une session interactive.
+
+
+SPICE définit le courant d’une source de tension comme entrant par sa borne positive. Or, ici, la source fournit du courant au circuit. Le courant circule donc dans le sens opposé à la convention interne de SPICE.
+
+print v(vin)
+print v(vout)
+print i(vin)
+quit 
+
+
+
+Tout circuit SPICE doit posseder le noeud 0
+
+Simulation Program With Integrated Circuit  Emphasis 
+
+1	1
+1k	1000
+1meg	1000000
+1m	0.001
+
+1u	10−6
+
+1n	10−9
+
+1p	10−12
+
+
+ATTENTION 1m c'est mili, pour mega, utiliser 1meg

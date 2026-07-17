@@ -1,0 +1,15 @@
+Series Network KVL Measurements
+
+V1 vin 0 DC 12
+R1 vin n1 1k
+R2 n1 n2 2k
+R3 n2 0 3k
+
+.dc V1 0 12 1
+
+.meas dc vr1_at_12 FIND v(vin,n1) AT=12
+.meas dc vr2_at_12 FIND v(n1,n2) AT=12
+.meas dc vr3_at_12 FIND v(n2,0) AT=12
+.meas dc current_at_12 FIND i(v1) AT=12
+
+.end

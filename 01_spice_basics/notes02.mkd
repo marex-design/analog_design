@@ -1,0 +1,81 @@
+savoir :
+
+appliquer la loi des tensions de Kirchhoff ;
+appliquer la loi des courants de Kirchhoff ;
+calculer une résistance équivalente ;
+analyser un réseau série ;
+analyser un réseau parallèle ;
+effectuer un balayage DC simple ;
+utiliser une première instruction .meas.
+
+
+
+1iere loi des courants : courants entrants=courants sortants (Cette loi vient de la conservation de la charge électrique.)
+
+2ieme loi : loi des tensions (Cette loi vient de la conservation de l’énergie.)
+
+
+INTRODUCTION à MEANS 
+###########################
+
+L’instruction .print affiche des valeurs ou des courbes.
+
+L’instruction .meas demande à ngspice de calculer et de nommer une
+ métrique précise.
+
+Exemple 
+
+.meas dc output_voltage FIND v(vout) AT=10
+
+
+.meas             effectuer une mesure
+dc                pendant une analyse DC
+output_voltage    nom donné au résultat
+FIND v(vout)      grandeur recherchée
+AT=10             valeur du balayage où effectuer la mesure
+
+
+Important : pour utiliser cette forme de .meas dc, il faut effectuer un balayage .dc.
+
+
+la ligne .dc V1 0 10 1 , signifie : 
+
+V1    : source à faire varier
+0     : valeur initiale
+10    : valeur finale
+1     : pas
+
+Ngspice executera pour :
+
+V1 = 0 V
+V1 = 1 V
+V1 = 2 V
+...
+V1 = 10 V
+
+
+Les résultats attendus sont :
+
+Vin Vout
+	​
+
+
+0 V	0 V
+1 V	0,5 V
+2 V	1 V
+3 V	1,5 V
+4 V	2 V
+5 V	2,5 V
+6 V	3 V
+7 V	3,5 V
+8 V	4 V
+9 V	4,5 V
+10 V	5 V
+
+
+
+La notation v(a,b), signifie V(a,b)=V(a)−V(b)
+
+
+
+

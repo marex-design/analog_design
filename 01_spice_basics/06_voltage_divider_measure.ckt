@@ -1,0 +1,14 @@
+Voltage Divider with DC Measurement
+
+V1 vin 0 DC 10
+R1 vin vout 1k
+R2 vout 0 1k
+
+.dc V1 0 10 1
+
+.print dc v(vin) v(vout) i(v1)
+
+.meas dc vout_at_10 FIND v(vout) AT=10
+.meas dc source_current_at_10 FIND i(v1) AT=10
+
+.end

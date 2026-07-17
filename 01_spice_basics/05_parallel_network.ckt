@@ -1,0 +1,12 @@
+Parallel Resistor Network - KCL
+
+V1 vin 0 DC 12
+R1 vin 0 1k
+R2 vin 0 2k
+R3 vin 0 3k
+
+.op
+
+.print op v(vin) i(v1)
+
+.end
