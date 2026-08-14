@@ -1,0 +1,12 @@
+Voltage Divider - Vin = 12V
+
+V1 vin 0 DC 12
+
+R1 vin vout 1k
+R2 vout 0 2k
+
+.op
+
+.print op v(vin) v(vout) i(V1)
+
+.end

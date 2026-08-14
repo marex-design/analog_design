@@ -1,12 +1,13 @@
 Series Resistor Network - KVL
 
 V1 vin 0 DC 12
+
 R1 vin n1 1k
-R2 n1 n2 2k
-R3 n2 0 3k
+R2 n1  n2 2k
+R3 n2  0  3k
 
 .op
 
-.print op v(vin) v(n1) v(n2) i(v1)
+.print op v(vin,n2) v(n2) i(V1)
 
 .end

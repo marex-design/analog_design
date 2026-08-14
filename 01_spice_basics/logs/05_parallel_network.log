@@ -1,11 +1,10 @@
 Warning: can't parse 'vin': ignored
-Warning: can't parse 'vout': ignored
 Warning: can't parse 'v1#branch': ignored
 
 Note: No compatibility mode selected!
 
 
-Circuit: voltage divider - week 1 day 1
+Circuit: parallel resistor network - kcl
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
@@ -14,13 +13,12 @@ No. of Data Rows : 1
 	Node                                  Voltage
 	----                                  -------
 	----	-------
-	vout                             5.000000e+00
-	vin                              1.000000e+01
+	vin                              1.200000e+01
 
 	Source	Current
 	------	-------
 
-	v1#branch                        -5.00000e-03
+	v1#branch                        -2.20000e-02
 
  Resistor models (Simple linear resistor)
       model                     R
@@ -42,19 +40,19 @@ No. of Data Rows : 1
          ef                     1
 
  Resistor: Simple linear resistor
-     device                    r2                    r1
-      model                     R                     R
- resistance                  1000                  1000
-         ac                  1000                  1000
-      dtemp                     0                     0
-     bv_max                 1e+99                 1e+99
-      noisy                     1                     1
-          i                 0.005                 0.005
-          p                 0.025                 0.025
+     device                    r3                    r2                    r1
+      model                     R                     R                     R
+ resistance                  3000                  2000                  1000
+         ac                  3000                  2000                  1000
+      dtemp                     0                     0                     0
+     bv_max                 1e+99                 1e+99                 1e+99
+      noisy                     1                     1                     1
+          i                 0.004                 0.006                 0.012
+          p                 0.048                 0.072                 0.144
 
  Vsource: Independent voltage source
      device                    v1
-         dc                    10
+         dc                    12
       acmag                     0
       pulse         -
         sin         -
@@ -69,23 +67,23 @@ No. of Data Rows : 1
         pwr                     0
        freq                     0
       phase                     0
-          i                -0.005
-          p                 -0.05
+          i                -0.022
+          p                -0.264
 
-                         voltage divider - week 1 day 1
-                         Operating Point  Fri Aug 14 10:06:57  2026
+                        parallel resistor network - kcl
+                        Operating Point  Fri Aug 14 10:26:05  2026
 --------------------------------------------------------------------------------
-Index   v(vin)          v(vout)         v1#branch       
+Index   v(vin)          v1#branch       
 --------------------------------------------------------------------------------
-0	1.000000e+01	5.000000e+00	-5.00000e-03	
+0	1.200000e+01	-2.20000e-02	
 
 
 Total analysis time (seconds) = 0
 
-Total elapsed time (seconds) = 0.010 
+Total elapsed time (seconds) = 0.011 
 
 Total DRAM available = 8075.586 MB.
-DRAM currently available = 1843.020 MB.
+DRAM currently available = 1703.926 MB.
 Maximum ngspice program size =    8.863 MB.
 Current ngspice program size =    8.859 MB.
 

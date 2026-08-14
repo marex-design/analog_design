@@ -5,7 +5,7 @@ Warning: can't parse 'v1#branch': ignored
 Note: No compatibility mode selected!
 
 
-Circuit: voltage divider - week 1 day 1
+Circuit: voltage divider - week 1 day 1 - exercise 2
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
@@ -14,13 +14,13 @@ No. of Data Rows : 1
 	Node                                  Voltage
 	----                                  -------
 	----	-------
-	vout                             5.000000e+00
-	vin                              1.000000e+01
+	vout                             4.000000e+00
+	vin                              1.200000e+01
 
 	Source	Current
 	------	-------
 
-	v1#branch                        -5.00000e-03
+	v1#branch                        -4.00000e-03
 
  Resistor models (Simple linear resistor)
       model                     R
@@ -44,17 +44,17 @@ No. of Data Rows : 1
  Resistor: Simple linear resistor
      device                    r2                    r1
       model                     R                     R
- resistance                  1000                  1000
-         ac                  1000                  1000
+ resistance                  1000                  2000
+         ac                  1000                  2000
       dtemp                     0                     0
      bv_max                 1e+99                 1e+99
       noisy                     1                     1
-          i                 0.005                 0.005
-          p                 0.025                 0.025
+          i                 0.004                 0.004
+          p                 0.016                 0.032
 
  Vsource: Independent voltage source
      device                    v1
-         dc                    10
+         dc                    12
       acmag                     0
       pulse         -
         sin         -
@@ -69,23 +69,23 @@ No. of Data Rows : 1
         pwr                     0
        freq                     0
       phase                     0
-          i                -0.005
-          p                 -0.05
+          i                -0.004
+          p                -0.048
 
-                         voltage divider - week 1 day 1
-                         Operating Point  Fri Aug 14 10:06:57  2026
+                  voltage divider - week 1 day 1 - exercise 2
+                  Operating Point  Fri Aug 14 10:06:57  2026
 --------------------------------------------------------------------------------
 Index   v(vin)          v(vout)         v1#branch       
 --------------------------------------------------------------------------------
-0	1.000000e+01	5.000000e+00	-5.00000e-03	
+0	1.200000e+01	4.000000e+00	-4.00000e-03	
 
 
 Total analysis time (seconds) = 0
 
-Total elapsed time (seconds) = 0.010 
+Total elapsed time (seconds) = 0.013 
 
 Total DRAM available = 8075.586 MB.
-DRAM currently available = 1843.020 MB.
-Maximum ngspice program size =    8.863 MB.
-Current ngspice program size =    8.859 MB.
+DRAM currently available = 1875.121 MB.
+Maximum ngspice program size =    8.855 MB.
+Current ngspice program size =    8.852 MB.
 
