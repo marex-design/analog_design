@@ -1,0 +1,27 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: voltage divider - first measurements
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 13
+
+  Measurements for DC Analysis
+
+vout_at_12          =  4.000000e+00
+vin_at_12           =  1.200000e+01
+vout_at_6           =  2.000000e+00
+
+
+Total analysis time (seconds) = 0
+
+Total elapsed time (seconds) = 0.012 
+
+Total DRAM available = 8075.586 MB.
+DRAM currently available = 1837.094 MB.
+Maximum ngspice program size =    8.879 MB.
+Current ngspice program size =    8.875 MB.
+

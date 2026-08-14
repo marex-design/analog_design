@@ -1,0 +1,35 @@
+Error: no such vector as v(vin,n1).
+ .meas dc vr1_at_12 find v(vin,n1) at=12 failed!
+
+Error: no such vector as v(n1,n2).
+ .meas dc vr2_at_12 find v(n1,n2) at=12 failed!
+
+
+Note: No compatibility mode selected!
+
+
+Circuit: series network - automated measurements
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 13
+
+  Measurements for DC Analysis
+
+vin_at_12           =  1.200000e+01
+vn1_at_12           =  1.000000e+01
+vn2_at_12           =  6.000000e+00
+vr3_at_12           =  6.000000e+00
+isource_at_12       =  -2.000000e-03
+
+
+Total analysis time (seconds) = 0.001
+
+Total elapsed time (seconds) = 0.011 
+
+Total DRAM available = 8075.586 MB.
+DRAM currently available = 1723.367 MB.
+Maximum ngspice program size =    8.898 MB.
+Current ngspice program size =    8.895 MB.
+

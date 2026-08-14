@@ -1,0 +1,47 @@
+Series Parallel Network - KVL and KCL
+
+* DC voltage source
+V1 vin 0 DC 12
+
+* Current sensor and series resistor
+VSENSE1 vin nr1 0
+R1 nr1 n1 1k
+
+* Parallel branch 1
+VSENSE2 n1 nr2 0
+R2 nr2 0 2k
+
+* Parallel branch 2
+VSENSE3 n1 nr3 0
+R3 nr3 0 2k
+
+* DC sweep
+.dc V1 0 12 1
+
+* Node voltages
+.meas dc vin_at_12 FIND v(vin) AT=12
+.meas dc vn1_at_12 FIND v(n1) AT=12
+
+* Branch currents
+.meas dc ir1_at_12 FIND i(VSENSE1) AT=12
+.meas dc ir2_at_12 FIND i(VSENSE2) AT=12
+.meas dc ir3_at_12 FIND i(VSENSE3) AT=12
+
+* Source current
+.meas dc isource_at_12 FIND i(V1) AT=12
+
+* Voltage drops
+.meas dc vr1_at_12 PARAM='vin_at_12-vn1_at_12'
+.meas dc vr2_at_12 PARAM='vn1_at_12'
+.meas dc vr3_at_12 PARAM='vn1_at_12'
+
+* KCL residual
+.meas dc kcl_error PARAM='ir1_at_12-ir2_at_12-ir3_at_12'
+
+* KVL residual - loop V1-R1-R2
+.meas dc kvl_error_r2 PARAM='vin_at_12-vr1_at_12-vr2_at_12'
+
+* KVL residual - loop V1-R1-R3
+.meas dc kvl_error_r3 PARAM='vin_at_12-vr1_at_12-vr3_at_12'
+
+.end

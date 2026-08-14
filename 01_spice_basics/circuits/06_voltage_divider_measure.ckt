@@ -1,0 +1,14 @@
+Voltage Divider - First Measurements
+
+V1 vin 0 DC 12
+
+R1 vin vout 2k
+R2 vout 0 1k
+
+.dc V1 0 12 1
+
+.meas dc vout_at_12 FIND v(vout) AT=12
+.meas dc vin_at_12  FIND v(vin)  AT=12
+.meas dc vout_at_6  FIND v(vout) AT=6
+
+.end

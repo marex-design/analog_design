@@ -1,0 +1,20 @@
+Parallel Network Exercise
+
+* Source
+V1 vin 0 DC 15
+
+* Parallel resistors
+R1 vin 0 1k
+R2 vin 0 3k
+R3 vin 0 5k
+
+* DC sweep
+.dc V1 0 15 1
+
+* Voltage measurement
+.meas dc vin_at_15 FIND v(vin) AT=15
+
+* Source current
+.meas dc isource_at_15 FIND i(V1) AT=15
+
+.end

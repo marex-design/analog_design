@@ -71,19 +71,19 @@ No. of Data Rows : 1
           p                -0.264
 
                         parallel resistor network - kcl
-                        Operating Point  Fri Aug 14 10:26:05  2026
+                        Operating Point  Fri Aug 14 10:39:26  2026
 --------------------------------------------------------------------------------
 Index   v(vin)          v1#branch       
 --------------------------------------------------------------------------------
 0	1.200000e+01	-2.20000e-02	
 
 
-Total analysis time (seconds) = 0
+Total analysis time (seconds) = 0.001
 
-Total elapsed time (seconds) = 0.011 
+Total elapsed time (seconds) = 0.010 
 
 Total DRAM available = 8075.586 MB.
-DRAM currently available = 1703.926 MB.
-Maximum ngspice program size =    8.863 MB.
-Current ngspice program size =    8.859 MB.
+DRAM currently available = 1764.176 MB.
+Maximum ngspice program size =    8.852 MB.
+Current ngspice program size =    8.848 MB.
 

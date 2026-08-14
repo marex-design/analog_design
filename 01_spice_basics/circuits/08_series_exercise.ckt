@@ -1,0 +1,27 @@
+Series Network Exercise
+
+* Source
+V1 vin 0 DC 20
+
+* Series resistors
+R1 vin n1 2k
+R2 n1  n2 3k
+R3 n2  0  5k
+
+* DC sweep
+.dc V1 0 20 1
+
+* Node voltages at V1 = 20 V
+.meas dc vin_at_20 FIND v(vin) AT=20
+.meas dc vn1_at_20 FIND v(n1) AT=20
+.meas dc vn2_at_20 FIND v(n2) AT=20
+
+* Voltage drops computed from node voltages
+.meas dc vr1_at_20 PARAM='vin_at_20-vn1_at_20'
+.meas dc vr2_at_20 PARAM='vn1_at_20-vn2_at_20'
+.meas dc vr3_at_20 PARAM='vn2_at_20'
+
+* Source current
+.meas dc isource_at_20 FIND i(V1) AT=20
+
+.end
