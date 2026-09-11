@@ -1,0 +1,22 @@
+Voltage Source versus Current Source
+
+* ==========================================
+* CIRCUIT A - Voltage source
+* ==========================================
+
+V1 va 0 DC 10
+R1 va 0 5k
+
+
+* ==========================================
+* CIRCUIT B - Current source
+* ==========================================
+
+I1 0 vb DC 2m
+R2 vb 0 5k
+
+
+* Operating point
+.op
+
+.end

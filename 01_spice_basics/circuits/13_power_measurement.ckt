@@ -1,0 +1,36 @@
+Power Measurement and Conservation
+
+* DC voltage source
+V1 vin 0 DC 10
+
+* Ideal 0 V current sensor
+VSENSE1 vin nr1 0
+
+* Load resistor
+R1 nr1 0 5k
+
+* DC sweep
+.dc V1 0 10 1
+
+* ------------------------------------------
+* Raw measurements at V1 = 10 V
+* ------------------------------------------
+
+.meas dc vin_at_10 FIND v(vin) AT=10
+.meas dc ir_at_10 FIND i(VSENSE1) AT=10
+.meas dc isource_at_10 FIND i(V1) AT=10
+
+* ------------------------------------------
+* Derived power measurements
+* ------------------------------------------
+
+.meas dc presistor_at_10 PARAM='vin_at_10*ir_at_10'
+.meas dc psource_at_10 PARAM='vin_at_10*isource_at_10'
+
+* ------------------------------------------
+* Power conservation residual
+* ------------------------------------------
+
+.meas dc power_error PARAM='presistor_at_10+psource_at_10'
+
+.end

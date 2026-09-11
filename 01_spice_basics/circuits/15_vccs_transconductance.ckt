@@ -1,0 +1,30 @@
+VCCS Transconductance Example
+
+* Independent input voltage
+V1 vin 0 DC 2
+
+* Voltage Controlled Current Source
+* Iout = gm * Vin
+* gm = 2 mS
+G1 0 vout vin 0 2m
+
+* Output load
+RL vout 0 2k
+
+* Sweep input voltage
+.dc V1 0 4 0.5
+
+* Raw measurements at Vin = 2 V
+.meas dc vin_at_2 FIND v(vin) AT=2
+.meas dc vout_at_2 FIND v(vout) AT=2
+
+* Derived output current from Ohm's law
+.meas dc iout_at_2 PARAM='vout_at_2/2000'
+
+* Derived transconductance
+.meas dc gm_measured PARAM='iout_at_2/vin_at_2'
+
+* Derived voltage gain
+.meas dc gain_at_2 PARAM='vout_at_2/vin_at_2'
+
+.end

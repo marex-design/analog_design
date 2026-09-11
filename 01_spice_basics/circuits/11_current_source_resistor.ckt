@@ -1,0 +1,13 @@
+Current Source with Resistor
+
+* Independent current source
+I1 0 n1 DC 2m
+
+* Resistor
+R1 n1 0 500R
+
+* Operating point analysis
+.op
+
+
+.end

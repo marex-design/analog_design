@@ -1,0 +1,23 @@
+VCVS Voltage Amplifier
+
+* Independent input voltage
+V1 vin 0 DC 2
+
+* Voltage Controlled Voltage Source
+* Vout = 5 * Vin
+E1 vout 0 vin 0 5
+
+* Output load
+RL vout 0 5k
+
+* DC sweep of input source
+.dc V1 0 4 0.5
+
+* Raw node voltage measurements
+.meas dc vin_at_2 FIND v(vin) AT=2
+.meas dc vout_at_2 FIND v(vout) AT=2
+
+* Derived voltage gain
+.meas dc gain_at_2 PARAM='vout_at_2/vin_at_2'
+
+.end
